@@ -75,3 +75,15 @@ function loginFacebook() {
       console.log("Error de firebase, mensaje > " + error.message);
     });
 }
+
+function loginGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(() => {
+      var token = result.credential.accessToken;
+      var user = result.user;
+    }).catch(function (error) {
+      console.log("Error de firebase > " + error.code);
+      console.log("Error de firebase, mensaje > " + error.message);
+    });
+}
