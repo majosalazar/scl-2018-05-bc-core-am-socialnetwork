@@ -76,6 +76,7 @@ function loginFacebook() {
     });
 }
 
+//Función para logear con Google
 function loginGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
