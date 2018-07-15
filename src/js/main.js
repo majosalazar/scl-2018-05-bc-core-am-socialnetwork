@@ -75,3 +75,16 @@ function loginFacebook() {
       console.log("Error de firebase, mensaje > " + error.message);
     });
 }
+
+//Función para logear con Google
+function loginGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then(() => {
+      const token = result.credential.accessToken;
+      const user = result.user;
+    }).catch(function (error) {
+      console.log("Error de firebase > " + error.code);
+      console.log("Error de firebase, mensaje > " + error.message);
+    });
+}
