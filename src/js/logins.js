@@ -4,10 +4,12 @@ window.onload = () => {
     if (user) {
       //Si nos logeamos, entramos al perfil del usuario
       logIn.style.display = "none";
+      sidebar.style.display = "block";
       profile.style.display = "block";
     } else {
       //Si no logeamos, nos mantenemos en la página de sign in o sign up
       logIn.style.display = "block";
+      sidebar.style.display = "none";
       profile.style.display = "none";
     }
     console.log(user);
@@ -88,9 +90,4 @@ function loginGoogle() {
       console.log("Error de firebase > " + error.code);
       console.log("Error de firebase, mensaje > " + error.message);
     });
-}
-
-displayMuro = () => {
-  profile.style.display = "none";
-  muro.style.display = "block";
 }
