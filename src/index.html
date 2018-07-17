@@ -125,8 +125,9 @@
     <div class="container-fluid" id="secProfile">
       <div class="text-center p-5"></div>
       <div id="userData">
-
+        
       </div>
+      <button id="configProfile" onclick="users()" >Configuración </button>
     </div>
     <!-- seccion contactanos -->
     <div class="container-fluid">
@@ -154,6 +155,8 @@
       messagingSenderId: "969694902586"
     };
     firebase.initializeApp(config);
+    // Get a reference to the database service
+    var database = firebase.database();
   </script>
   <!-- enlaces js local -->
   <script src="js/main.js"></script>

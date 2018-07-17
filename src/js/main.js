@@ -94,10 +94,9 @@ function loginGoogle() {
 
 
 //seccion profile
-firebase.auth().currentUser;
 
-//firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user !=null) {
 
     logIn.style.display = "none";
     profile.style.display = "none";
@@ -105,21 +104,35 @@ firebase.auth().currentUser;
     userData.innerHTML = `
     <img src="${user.photoURL}" alt="foto de perfil del usuario">
     <p>${(user.displayName)}</p>
-    <p>${(user.email)}</p>
-
+    <p>${(user.emailVerified)}</p>
     `
+    
   }
-//})
+})
 
-firebase.auth().currentUser;
+//configProfile.addEventListener('click', () => {
+//  function users();
+//});
 
-if (user) {
-  // User is signed in.
-  console.log('hola' +(user));
-  
-} else {
-  // No user is signed in.
+//base de datos de usurios para mostrar en el perfil
+function users() {
+  const currentUser = firebase.auth().currentUser;
+  const inputEmail = 'hola';
+  //const inputAlumno =
+  //const inputCurso =
+
+  //nueva llave para la coleccion de datos
+  const newProfile = firebase.database().ref().child(`userProfile`).push().key;
+
+  firebase.database().ref(`userProfile/${newProfile}`).set({
+    usuario : currentUser.displayName,
+    email : inputEmail,
+    //alumno : inputAlumno,
+    //curso : inputCurso
+    
+  });
 }
+
 
 
 
