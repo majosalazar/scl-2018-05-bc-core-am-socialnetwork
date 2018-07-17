@@ -10,6 +10,7 @@ window.onload = () => {
       logIn.style.display = "block";
       profile.style.display = "none";
     }
+    console.log(user);
   });
 };
 
@@ -80,11 +81,16 @@ function loginFacebook() {
 function loginGoogle() {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider)
-    .then(() => {
+    .then((result) => {
       const token = result.credential.accessToken;
       const user = result.user;
-    }).catch(function (error) {
+    }).catch((error) => {
       console.log("Error de firebase > " + error.code);
       console.log("Error de firebase, mensaje > " + error.message);
     });
+}
+
+displayMuro = () => {
+  profile.style.display = "none";
+  muro.style.display = "block";
 }

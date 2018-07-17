@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chao Bullying</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,7 +18,9 @@
       <img src="img/logo-RS-blanco.png" class="rounded" alt="Profile">
     </div>
     <div class="container-fluid">
-      <p class="text-justify">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación y el buen trato entre todas quienes son participes de ella. Los usuarios van a poder leer, comentar y publicar casos, con el fin de apoyar y ayudar a todos aquellos que han vivido o estén en un entorno de bullying.
+      <p class="text-justify">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
+        y el buen trato entre todas quienes son participes de ella. Los usuarios van a poder leer, comentar y publicar casos,
+        con el fin de apoyar y ayudar a todos aquellos que han vivido o estén en un entorno de bullying.
       </p>
     </div>
     <div id="inputs">
@@ -49,8 +51,7 @@
       </a>
     </div>
   </div>
-  
-  <!-- seccion navbar -->
+  <!--Div del profile-->
   <div id="profile">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Chao Bullying</a>
@@ -61,7 +62,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Muro Informativo</a>
+            <a class="nav-link" href="#" onclick="displayMuro()">Muro Informativo</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Artículos</a>
@@ -84,15 +85,7 @@
         </ul>
       </div>
     </nav>
-    <!-- seccion muro informativo -->
-
-    <!-- seccion articulos  -->
-
-    <!-- seccion apoyo profesional -->
-
-    <!-- seccion denuncias -->
-
-    <!-- seccion perfil de usuario -->
+    <!--Sección perfil de usuario-->
     <div class="container-fluid">
       <div class="text-center p-5">
         <img src="profileImg.png" class="rounded" alt="Profile">
@@ -101,22 +94,81 @@
 
       </div>
     </div>
-    <!-- seccion contactanos -->
-    <div class="container-fluid">
-      <div class="text-center p-5">
-
+  </div>
+  <!--Div del muro-->
+  <div id="muro">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Chao Bullying</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="displayMuro()">Muro Informativo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Artículos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Apoyo Profesional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Denuncias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contáctanos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="logout" onclick="logOut()">Cerrar Sesión </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid border border-info">
+      <div class="row">
+        <div class="col-12 p-3">
+          <button onclick="articles()" id="articles">Articulos</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 p-3">
+          <button onclick="professionalSupport()" id="professionalSupport">Apoyo Profesional</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 p-3">
+          <button onclick="talks()" id="talks">Charlas</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 p-3">
+          <button onclick="complaints()" id="complaints">Denuncias</button>
+        </div>
       </div>
     </div>
-    
+  </div>
+  <!-- seccion articulos  -->
+
+  <!-- seccion apoyo profesional -->
+
+  <!-- seccion denuncias -->
+
+
+
   <!--Links de Bootstrap-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <!--Initialize Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
   <script>
     var config = {
       apiKey: "AIzaSyCkeW0zjK1x9rj7MEQYe_se7vcTWS4gwNo",

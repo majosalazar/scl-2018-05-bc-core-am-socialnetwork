@@ -1,9 +1,9 @@
-#logIn {
-  background-color: #00A5E1;
-}
-
 .btns {
   border-radius: 5px;
+}
+
+#logIn {
+  background-color: #00A5E1;
 }
 
 #signIn {
@@ -16,4 +16,8 @@
 
 #profile {
   display: none;
+}
+
+#muro {
+  display:none;
 }
