@@ -116,13 +116,19 @@
       <div class="row">
         <h3 class="col-12">Noticias de la comunidad escolar</h3>
       </div>
-      <div id="messageDiv" class="menu-closed">
-        <input type="text" id="messageArea">
-        <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
+      <div id="messageDiv">
+        <div class="container">
+          <textarea id="messageBox" style="width: 310px; margin: 0px; height: 80px; border: 2px solid #00A5E1" class="align-self-center"
+            placeholder="Escriba el mensaje."></textarea>
+        </div>
+        <div class="container">
+          <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
+          <input id="cancelButton" type="button" value="Cancelar" onclick="cancelMessage()">
+        </div>
       </div>
       <div class="container-fluid">
         <div class="row">
-          <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
+          <button onclick="writeNewPost()" class="btns m-2">Iniciar un tema</button>
         </div>
       </div>
     </div>

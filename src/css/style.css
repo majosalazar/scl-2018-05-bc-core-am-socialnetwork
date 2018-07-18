@@ -48,10 +48,6 @@
   display: none;
 }
 
-#messageContainer{
-  height: 4em;
-}
-
 /*Menú lateral con el Navbar*/
 .menu{
   position: absolute;
