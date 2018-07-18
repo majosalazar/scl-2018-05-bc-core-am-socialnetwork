@@ -14,11 +14,11 @@
 <body>
   <!--Div del login-->
   <div id="logIn">
-    <div class="text-center p-5">
-      <img src="img/logo-RS-blanco.png" class="rounded" alt="Profile">
+    <div class="text-center p-3">
+      <img src="img/logo-RS-blanco.png" class="rounded img-fluid" alt="Profile">
     </div>
     <div class="container-fluid">
-      <p class="text-justify">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
+      <p class="text-justify text-light">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
         y el buen trato entre todas quienes son participes de ella. Los usuarios van a poder leer, comentar y publicar casos,
         con el fin de apoyar y ayudar a todos aquellos que han vivido o estén en un entorno de bullying.
       </p>
@@ -113,17 +113,19 @@
   <div id="wallDisplay">
     <div class="container">
       <div class="row">
-        <h1 class="col">Noticias de la comunidad escolar</h1>
+        <h3 class="col-12">Noticias de la comunidad escolar</h1>
       </div>
-        <div class="row">
-          <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
+      <div class="row">
+        <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
+      </div>
+      <div id="messageDiv">
+        <input id="messageArea" type="text">
+        <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
+      </div>
+      <div id="wallMessages">
+        <div id="messageContainer">
         </div>
-        <div id="messageDiv">
-            <div id="messageContainer">
-            </div>
-            <input id="messageArea" type="text">
-            <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
-        </div>
+      </div>
     </div>
   </div>
   <!--Sección artículos-->
