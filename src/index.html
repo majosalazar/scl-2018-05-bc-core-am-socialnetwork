@@ -69,7 +69,7 @@
         <a class="nav-link" href="#" onclick="articles()">Artículos</a>
         <a class="nav-link" href="#" onclick="professionalSupport()">Apoyo Profesional</a>
         <a class="nav-link" href="#" onclick="complaints()">Denuncias</a>
-        <a class="nav-link" href="#">Perfil</a>
+        <a class="nav-link" href="#" onclick="profileGo()">Perfil</a>
         <a class="nav-link" href="#">Contáctanos</a>
         <a class="nav-link" href="#" id="logout" onclick="logOut()">Cerrar Sesión </a>
       </div>
@@ -109,83 +109,86 @@
       <div id="userData"></div>
       <button id="configProfile" onclick="users()">Configuración </button>
     </div>
-    <!--Div del muro-->
-    <div id="wallDisplay">
-      <div class="container">
-        <div class="row">
-          <h3 class="col-12">Noticias de la comunidad escolar</h1>
-        </div>
-        <div class="row">
-          <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
-        </div>
-        <div id="messageDiv">
-          <input id="messageArea" type="text">
-          <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
-        </div>
-        <div id="wallMessages">
-          <div id="messageContainer">
-          </div>
-        </div>
-        <!--Sección artículos-->
-        <div id="articlesDisplay">
-          <div class="container-fluid">
-            <div class="row">
-              <h1>Artículos</h1>
-            </div>
-          </div>
-        </div>
-        <!--Sección apoyo profesional-->
-        <div id="professionalSupportDisplay">
-          <div class="container-fluid">
-            <div class="row">
-              <h1>Apoyo profesional</h1>
-            </div>
-          </div>
-        </div>
-        <!--Sección charlas-->
-        <div id="talksDisplay">
-          <div class="container-fluid">
-            <div class="row">
-              <h1>Charlas</h1>
-            </div>
-          </div>
-        </div>
-        <!--Sección denuncias-->
-        <div id="complaintsDisplay">
-          <div class="container-fluid">
-            <div class="row">
-              <h1>Denuncias</h1>
-            </div>
-          </div>
-        </div>
-        <!--Links de Bootstrap-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-          crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-          crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-          crossorigin="anonymous"></script>
-        <!--Initialize Firebase-->
-        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-        <script>
-          var config = {
-            apiKey: "AIzaSyCkeW0zjK1x9rj7MEQYe_se7vcTWS4gwNo",
-            authDomain: "redsocial-b935e.firebaseapp.com",
-            databaseURL: "https://redsocial-b935e.firebaseio.com",
-            projectId: "redsocial-b935e",
-            storageBucket: "redsocial-b935e.appspot.com",
-            messagingSenderId: "969694902586"
-          };
-          firebase.initializeApp(config);
-          // Get a reference to the database service
-          var database = firebase.database();
-        </script>
-        <!--Enlaces JS-->
-        <script src="js/logins.js"></script>
-        <script src="js/profile.js"></script>
-        <script src="js/sidebar.js"></script>
-        <script src="js/appdisplays.js"></script>
-        <script src="js/appmuro.js"></script>
+  </div>
+  <!--Div del muro-->
+  <div id="wallDisplay">
+    <div class="container">
+      <div class="row">
+        <h3 class="col-12">Noticias de la comunidad escolar</h3>
+      </div>
+      <div class="row">
+        <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
+      </div>
+      <div id="messageDiv">
+        <input id="messageArea" type="text">
+        <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
+      </div>
+    </div>
+    <div id="wallMessages">
+      <div id="messageContainer">
+      </div>
+    </div>
+  </div>
+  <!--Sección artículos-->
+  <div id="articlesDisplay">
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="col-12">Artículos</h3>
+      </div>
+    </div>
+  </div>
+  <!--Sección apoyo profesional-->
+  <div id="professionalSupportDisplay">
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="col-12">Apoyo profesional</h3>
+      </div>
+    </div>
+  </div>
+  <!--Sección charlas-->
+  <div id="talksDisplay">
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="col-12">Charlas</h3>
+      </div>
+    </div>
+  </div>
+  <!--Sección denuncias-->
+  <div id="complaintsDisplay">
+    <div class="container-fluid">
+      <div class="row">
+        <h3 class="col-12">Denuncias</h3>
+      </div>
+    </div>
+  </div>
+  <!--Links de Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+  <!--Initialize Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyCkeW0zjK1x9rj7MEQYe_se7vcTWS4gwNo",
+      authDomain: "redsocial-b935e.firebaseapp.com",
+      databaseURL: "https://redsocial-b935e.firebaseio.com",
+      projectId: "redsocial-b935e",
+      storageBucket: "redsocial-b935e.appspot.com",
+      messagingSenderId: "969694902586"
+    };
+    firebase.initializeApp(config);
+    // Get a reference to the database service
+    var database = firebase.database();
+  </script>
+  <!--Enlaces JS-->
+  <script src="js/logins.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/appdisplays.js"></script>
+  <script src="js/appmuro.js"></script>
 </body>
 
 </html>

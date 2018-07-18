@@ -7,7 +7,7 @@ window.onload = () => {
       sidebar.style.display = "block";
       profile.style.display = "block";
       console.log(JSON.stringify(user));
-      
+
     } else {
       //Si no logeamos, nos mantenemos en la página de sign in o sign up
       logIn.style.display = "block";
@@ -93,28 +93,3 @@ function loginGoogle() {
       console.log("Error de firebase, mensaje > " + error.message);
     });
 }
-
-
-
-//seccion profile
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user !=null) {
-
-    logIn.style.display = "none";
-    profile.style.display = "none";
-    secProfile.style.display = "block";
-    userData.innerHTML = `
-    <img src="${user.photoURL}" alt="foto de perfil del usuario">
-    <p>${(user.displayName)}</p>
-    <p>${(user.emailVerified)}</p>
-    `
-    
-  }
-})
-
-
-
-
-
-

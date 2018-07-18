@@ -48,3 +48,12 @@ complaints = () => {
   wallDisplay.style.display = "none";
   complaintsDisplay.style.display = "block";
 }
+
+profileGo = () => {
+  profile.style.display = "block";
+  articlesDisplay.style.display = "none";
+  professionalSupportDisplay.style.display = "none";
+  talksDisplay.style.display = "none";
+  wallDisplay.style.display = "none";
+  complaintsDisplay.style.display = "none";
+}
