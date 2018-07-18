@@ -15,12 +15,40 @@
   width: 100%;
 }
 
+#sidebar {
+  display: none;
+}
+
 #profile {
   display: none;
 }
 
-#muro {
+#wallDisplay {
   display:none;
+}
+
+#articlesDisplay {
+  display: none;
+}
+
+#professionalSupportDisplay {
+  display: none;
+}
+
+#talksDisplay {
+  display: none;
+}
+
+#complaintsDisplay {
+  display: none;
+}
+
+#messageDiv {
+  display: none;
+}
+
+#messageContainer{
+  height: 70vh;
 }
 
 /*Menú lateral con el Navbar*/
