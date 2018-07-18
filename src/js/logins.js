@@ -61,6 +61,11 @@ function signIn() {
 function logOut() {
   firebase.auth().signOut()
     .then(() => {
+      articlesDisplay.style.display = "none";
+      professionalSupportDisplay.style.display = "none";
+      talksDisplay.style.display = "none";
+      complaintsDisplay.style.display = "none";
+      wallDisplay.style.display = "none";
       alert('¡Adiós, nos vemos pronto!');
     })
     .catch();
