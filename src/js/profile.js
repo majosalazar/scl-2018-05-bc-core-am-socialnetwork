@@ -9,10 +9,26 @@ function users() {
   const newProfile = firebase.database().ref().child(`userProfile`).push().key;
 
   firebase.database().ref(`userProfile/${newProfile}`).set({
-    usuario : currentUser.displayName,
-    email : inputEmail,
+    usuario: currentUser.displayName,
+    email: inputEmail,
     //alumno : inputAlumno,
     //curso : inputCurso
-    
+
   });
 }
+
+//Seccion profile
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user != null) {
+
+    logIn.style.display = "none";
+    profile.style.display = "none";
+    secProfile.style.display = "block";
+    userData.innerHTML = `
+    <img src="${user.photoURL}" alt="foto de perfil del usuario">
+    <p>${(user.displayName)}</p>
+    <p>${(user.emailVerified)}</p>
+    `
+
+  }
+});
