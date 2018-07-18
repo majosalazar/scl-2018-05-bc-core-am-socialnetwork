@@ -116,12 +116,14 @@
       <div class="row">
         <h3 class="col-12">Noticias de la comunidad escolar</h3>
       </div>
-      <div class="row">
-        <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
-      </div>
-      <div id="messageDiv">
-        <input id="messageArea" type="text">
+      <div id="messageDiv" class="menu-closed">
+        <input type="text" id="messageArea">
         <input id="sendButton" type="button" value="Subir" onclick="sendMessage()">
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <button onclick="writeNewPost()" class="btns">Iniciar un tema</button>
+        </div>
       </div>
     </div>
     <div id="wallMessages">

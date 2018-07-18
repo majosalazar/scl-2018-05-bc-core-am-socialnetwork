@@ -18,10 +18,6 @@ firebase.database().ref('messages')
           <p>${newMessage.val().text}</p>
       `;
   });
-  
-function writeNewPost() {
-  messageDiv.style.display = "block";
-}
 
 //Función para mandar mensajes
 function sendMessage(){
@@ -36,4 +32,22 @@ function sendMessage(){
       creatorName : currentUser.displayName,
       text : messageAreaText
   });
+}
+
+function writeNewPost(){ 
+  if (messageDiv.className.indexOf("menu_closed") >= 0) {
+    openMessage();
+  } else {
+    closeMessage();
+  }
+}
+
+function openMessage() {
+  messageDiv.classList.remove('menu_closed'); //Se quita la clase display-none para que se vea.
+  messageDiv.classList.add('menu_open');
+}
+
+function closeMessage() {
+  messageDiv.classList.add('menu_closed'); //Se añade la clase display-none para que se oculte.
+  messageDiv.classList.remove('menu_open');
 }
