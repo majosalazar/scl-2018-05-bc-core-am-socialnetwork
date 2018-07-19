@@ -3,7 +3,7 @@
 firebase.auth().onAuthStateChanged(function (user) {
   if (user != null) {
     userData.innerHTML += `
-    <img src="${user.photoURL}" alt="foto de perfil del usuario">
+    <img src="${user.photoURL}" alt="foto de perfil del usuario" id="photoProfile">
     <p>${(user.displayName)}</p>
     `
   }

@@ -27,6 +27,7 @@ body {
 
 #titleNav {
   color: white;
+  font-size: 1.5em;
 }
 
 #loginFacebook {
@@ -135,5 +136,9 @@ body {
 /*perfil de usuario*/
 #profile {
   text-align: center;
+}
+
+#photoProfile {
+  border-radius: 100%; 
 }
 
