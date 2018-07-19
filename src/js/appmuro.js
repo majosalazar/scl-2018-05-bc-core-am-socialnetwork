@@ -5,7 +5,6 @@ firebase.database().ref('messages')
     console.log("Mensajes > " + JSON.stringify(messages));
   })
   .catch(() => {
-
   });
 
 //Acá comenzamos a escuchar por nuevos mensajes usando el evento
@@ -13,10 +12,16 @@ firebase.database().ref('messages')
 firebase.database().ref('messages')
   .limitToLast(10)
   .on('child_added', (newMessage) => {
-    messageContainer.innerHTML += `
-          <p>Nombre : ${newMessage.val().creatorName}</p>
-          <p>${newMessage.val().text}</p>
-      `;
+    const messageContainer = document.createElement('div')
+    wallMessages.appendChild(messageContainer)
+    messageContainer.innerHTML +=
+      `<div style = "background-color: #E8910C" class="mb-3">
+      <p class="m-0">Autor: ${newMessage.val().creatorName}</p>
+      <p class="m-0">Mensaje<br>${newMessage.val().text}</p>
+      <i class="fas fa-star p-1 pb-2" onclick=starPost()>0</i>
+      <i class="far fa-edit p-1 pb-2" onclick=editPost()></i>
+      <i class="fas fa-trash-alt p-1 pb-2" onclick=deletePost()></i> 
+      </div>`;
   });
 
 //Función para mandar mensajes y ocultar el div del mensaje.

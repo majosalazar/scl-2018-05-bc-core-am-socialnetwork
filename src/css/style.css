@@ -10,14 +10,27 @@
 
 #signIn {
   width: 100%;
+  background: #E8910C;
 }
 
 #signUp {
   width: 100%;
+  background: #E4FF0D; 
 }
 
 #sidebar {
   display: none;
+  background: #620CE8;
+}
+
+#sideMenu {
+  background: #620CE8;
+  z-index: 1;
+}
+
+.nav-link {
+  text-decoration-color: white;
+  font-weight: bold;
 }
 
 #profile {

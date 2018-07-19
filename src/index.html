@@ -8,6 +8,8 @@
   <title>Chao Bullying</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
     crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,26 +19,30 @@
     <div class="text-center p-3">
       <img src="img/logo-RS-blanco.png" class="rounded img-fluid" alt="Profile">
     </div>
-    <div class="container-fluid">
-      <p class="text-justify text-light">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
+    <div class="container">
+      <p class="text-justify text-light m-0">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
         y el buen trato entre todas quienes son participes de ella. Los usuarios van a poder leer, comentar y publicar casos,
         con el fin de apoyar y ayudar a todos aquellos que han vivido o estén en un entorno de bullying.
       </p>
     </div>
-    <div id="inputs">
-      <div class="row justify-content-center pt-5 pb-2">
-        <input id="email" class="btns" type="email" placeholder="Email">
-      </div>
-      <div class="row justify-content-center pb-5">
-        <input id="password" type="password" placeholder="Contraseña" class="btns">
+    <div class="container">
+      <div id="inputs">
+        <div class="row justify-content-center pt-3 pb-2">
+          <input id="email" class="btns" type="email" placeholder="Email">
+        </div>
+        <div class="row justify-content-center pb-3">
+          <input id="password" type="password" placeholder="Contraseña" class="btns">
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col p-0">
-        <button onclick="signIn()" id="signIn" class="btn mb-2 rounded-0 btn-style bg-warning text-dark p-3">Sign In</button>
-      </div>
-      <div class="col p-0 pb-4">
-        <button onclick="signUp()" id="signUp" class="btn mb-2 rounded-0 btn-style text-dark p-3">Sign Up</button>
+    <div class="container">
+      <div class="row">
+        <div class="col p-0">
+          <button onclick="signIn()" id="signIn" class="btn mb-2 rounded-0 btn-style text-dark p-3">Sign In</button>
+        </div>
+        <div class="col p-0 pb-4">
+          <button onclick="signUp()" id="signUp" class="btn mb-2 rounded-0 btn-style text-dark p-3">Sign Up</button>
+        </div>
       </div>
     </div>
     <div id="facebookBtn">
@@ -53,25 +59,25 @@
   </div>
   <!--Div del sidebar-->
   <div id="sidebar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">Chao Bullying</a>
       <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </nav>
-    <nav id="sideMenu" class="nav flex-column float-left menu bg-light menu_closed">
+    <nav id="sideMenu" class="nav flex-column float-left menu menu_closed">
       <div onclick="toggleMenu()" class="close_button">
         <span aria-hidden="true">&times;</span>
       </div>
       <div class="menu_content">
-        <a class="nav-link" href="#" onclick="wall()">Muro Informativo</a>
-        <a class="nav-link" href="#" onclick="articles()">Artículos</a>
-        <a class="nav-link" href="#" onclick="professionalSupport()">Apoyo Profesional</a>
-        <a class="nav-link" href="#" onclick="complaints()">Denuncias</a>
-        <a class="nav-link" href="#" onclick="profileGo()">Perfil</a>
-        <a class="nav-link" href="#">Contáctanos</a>
-        <a class="nav-link" href="#" id="logout" onclick="logOut()">Cerrar Sesión </a>
+        <a class="nav-link text-light" href="#" onclick="wall()">Muro Informativo</a>
+        <a class="nav-link text-light" href="#" onclick="articles()">Artículos</a>
+        <a class="nav-link text-light" href="#" onclick="professionalSupport()">Apoyo Profesional</a>
+        <a class="nav-link text-light" href="#" onclick="complaints()">Denuncias</a>
+        <a class="nav-link text-light" href="#" onclick="profileGo()">Perfil</a>
+        <a class="nav-link text-light" href="#">Contáctanos</a>
+        <a class="nav-link text-light" href="#" id="logout" onclick="logOut()">Cerrar Sesión </a>
       </div>
     </nav>
   </div>
@@ -133,7 +139,11 @@
       </div>
     </div>
     <div id="wallMessages">
-      <div id="messageContainer">
+      <div class="container">
+        <div class="row">
+          <div id="messageContainer" class="col-12">
+          </div>
+        </div>
       </div>
     </div>
   </div>
