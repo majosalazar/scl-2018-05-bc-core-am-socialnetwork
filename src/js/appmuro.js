@@ -7,8 +7,7 @@ firebase.database().ref('messages')
   .catch(() => {
   });
 
-//Acá comenzamos a escuchar por nuevos mensajes usando el evento
-//on child_added
+//Aquí se van adicionando los nuevos mensages (childs) de los User guardados en la database.
 firebase.database().ref('messages')
   .limitToLast(10)
   .on('child_added', (newMessage) => {
@@ -17,7 +16,7 @@ firebase.database().ref('messages')
     messageContainer.innerHTML +=
       `<div style = "background-color: #E8910C" class="mb-3">
         <p class="m-0">Autor: ${newMessage.val().creatorName}</p>
-        <p class="m-0" id="writeMessage" dataKey="${newMessage.key}" dataMessage="${newMessage.text}">Mensaje<br>${newMessage.val().text}</p>
+        <p class="m-0" id="writeMessage" dataKey="${newMessage.key}">Mensaje<br>${newMessage.val().text}</p>
           <i class="fas fa-star p-1 pb-1" dataKey="${newMessage.key}" onclick="starPost(event)"><span>${newMessage.val().stars}</span></i>
           <i class="far fa-edit p-1 pb-1" dataKey="${newMessage.key}" onclick="editPost(event)">
           </i>
@@ -27,13 +26,15 @@ firebase.database().ref('messages')
 
 //Función para editar el mensaje.
 function editPost(event) {
-  messageDiv.style.display = "block";
+  if (messageDiv.style.display === "block") {
+    editContainer.style.display = "none";
+  } else { editContainer.style.display = "block" }
   event.stopPropagation();
   const keyPostToEdit = event.target.getAttribute('dataKey');
-  firebase.database().ref('messages/').child(keyPostToEdit).once('value', function () {
-    let baseMessage = event.target.getAttribute('dataMessage');
+  /*firebase.database().ref('messages/').child(keyPostToEdit).once('value', function () {
+    let baseMessage = event.target.getAttribute();
     document.getElementById("messageBox").value = baseMessage.writeMessage;
-  });
+  });*/
 };
 
 
@@ -85,10 +86,16 @@ function sendMessage() {
 
 //Aparece el div para escribir el mensaje.
 function writeNewPost() {
-  messageDiv.style.display = "block";
+  if (editContainer.style.display === "block") {
+    messageDiv.style.display = "none";
+  } else {messageDiv.style.display = "block"};
 }
 
 //Desaparece el div para escribir el mensaje.
 function cancelMessage() {
   messageDiv.style.display = "none";
+}
+
+function editCancelMessage() {
+  editContainer.style.display = "none";
 }

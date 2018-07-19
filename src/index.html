@@ -143,6 +143,16 @@
           <button onclick="writeNewPost()" class="btns m-2">Iniciar un tema</button>
         </div>
       </div>
+      <div class="container" id="editContainer">
+        <div class="container">
+          <textarea id="editMessageBox" style="width: 310px; margin: 0px; height: 80px; border: 2px solid #00A5E1" class="align-self-center"
+            placeholder="Escriba el mensaje."></textarea>
+        </div>
+        <div class="container">
+          <input id="editSendButton" type="button" class="mb-1" value="Editar" onclick="editSendMessage()">
+          <input id="editCancelButton" type="button" class="mb-1" value="Cancelar" onclick="editCancelMessage()">
+        </div>
+      </div>
     </div>
     <div id="wallMessages">
       <div class="container">

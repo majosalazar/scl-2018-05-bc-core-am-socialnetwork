@@ -61,6 +61,10 @@
   display: none;
 }
 
+#editContainer{
+  display: none;
+}
+
 /*Menú lateral con el Navbar*/
 .menu{
   position: absolute;
