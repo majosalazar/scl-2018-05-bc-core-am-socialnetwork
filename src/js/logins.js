@@ -14,7 +14,7 @@ window.onload = () => {
       sidebar.style.display = "none";
       profile.style.display = "none";
     }
-    console.log("User: " + JSON.stringify(user));
+    console.log(JSON.stringify(user));
   });
 };
 

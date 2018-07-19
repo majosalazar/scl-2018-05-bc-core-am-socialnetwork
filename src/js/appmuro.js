@@ -20,9 +20,29 @@ firebase.database().ref('messages')
       <p class="m-0">Mensaje<br>${newMessage.val().text}</p>
       <i class="fas fa-star p-1 pb-2" onclick=starPost()>0</i>
       <i class="far fa-edit p-1 pb-2" onclick=editPost()></i>
-      <i class="fas fa-trash-alt p-1 pb-2" onclick=deletePost()></i> 
+      <i class="fas fa-trash-alt p-1 pb-2" onclick=deletePost(event)></i> 
       </div>`;
   });
+
+//Función para editar el mensaje.
+function editPost(){
+  const newMessageKey = firebase.database().ref().child('messages').push().key; 
+}
+
+//Función para eliminar el mensaje.
+function deletePost(event){
+  event.stopPropagation();
+  let accept = confirm('¿Está seguro que quiere eliminar el post?');
+  if(accept === true){
+    const key = firebase.database().ref().child('messages').push().key;
+    firebase.database().ref('messages').child(key).remove();
+  }else{}; 
+}
+
+//Función para adicionar estrellas.
+function starPost(){
+
+}
 
 //Función para mandar mensajes y ocultar el div del mensaje.
 function sendMessage() {
@@ -33,7 +53,6 @@ function sendMessage() {
 
     //Para tener una nueva llave en la colección messages.
     const newMessageKey = firebase.database().ref().child('messages').push().key;
-
     firebase.database().ref(`messages/${newMessageKey}`).set({
       creator: currentUser.uid,
       creatorName: currentUser.displayName,
