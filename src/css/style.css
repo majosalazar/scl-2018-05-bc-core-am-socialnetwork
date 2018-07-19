@@ -1,30 +1,56 @@
 /*Diseño de la página*/
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*login*/
 .btns {
-  border-radius: 5px;
+  width: 95%;
+  height: 2.5em;
 }
 
 #logIn {
   background-color: #00A5E1;
   width: 100%;
+  text-align: center;
 }
 
 #signIn {
   width: 100%;
-  background: #E8910C;
+  background: #ee4266;
 }
 
 #signUp {
   width: 100%;
-  background: #E4FF0D; 
+  background: #ffd23f; 
 }
 
+#titleNav {
+  color: white;
+}
+
+#loginFacebook {
+  width: 100%;
+  height: 2em;
+  background-color: white;
+  
+}
+
+#loginGoogle {
+  width: 100%;
+  height: 2em;
+  background-color: white;
+
+}
+
+/*sidebar*/
 #sidebar {
   display: none;
-  background: #620CE8;
+  background: #00A5E1;
 }
 
 #sideMenu {
-  background: #620CE8;
+  background: #ee4266;
   z-index: 1;
 }
 
@@ -33,6 +59,7 @@
   font-weight: bold;
 }
 
+/*divs ocultos con difetentes "paginas"*/
 #profile {
   display: none;
 }
@@ -59,6 +86,10 @@
 
 #messageDiv {
   display: none;
+}
+
+#configUser {
+  display: block;
 }
 
 /*Menú lateral con el Navbar*/
@@ -101,6 +132,8 @@
   }
 }
 
-#configUser {
-  display: block;
+/*perfil de usuario*/
+#profile {
+  text-align: center;
 }
+
