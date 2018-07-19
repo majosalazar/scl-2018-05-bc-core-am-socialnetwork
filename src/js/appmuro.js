@@ -2,7 +2,7 @@ firebase.database().ref('messages')
   .limitToLast(10) // Filtro para no obtener todos los mensajes
   .once('value')
   .then((messages) => {
-    console.log("Mensajes > " + JSON.stringify(messages));
+    JSON.stringify(messages);
   })
   .catch(() => {
   });
@@ -20,34 +20,34 @@ firebase.database().ref('messages')
       <p class="m-0">Mensaje<br>${newMessage.val().text}</p>
       <button class="btn" style="background-color:#E8910C" dataConvalidacion="${newMessage.key}"  onclick="starPost()">
       </button>
-        <i class="fas fa-star p-1 pb-2"></i>
+        <i class="fas fa-star p-1 pb-1"></i>
       <button class="btn" style="background-color:#E8910C" dataConvalidacion="${newMessage.key}"  onclick="editPost()">
-        <i class="far fa-edit p-1 pb-2"></i>
+        <i class="far fa-edit p-1 pb-1"></i>
       </button>
       <button class="btn" style="background-color:#E8910C" dataConvalidacion="${newMessage.key}"  onclick="deletePost()">
-        <i class="fas fa-trash-alt p-1 pb-2"></i>
+        <i class="fas fa-trash-alt p-1 pb-1"></i>
       </button> 
       </div>`;
   });
 
 //Función para editar el mensaje.
-function editPost(){
+function editPost() {
 }
 
 //Función para eliminar el mensaje.
-function deletePost(){  
+function deletePost() {
   event.stopPropagation();
   let accept = confirm('¿Está seguro que quiere eliminar el post?');
-  if(accept === true){
+  if (accept === true) {
     let keyPostToDelete = event.target.getAttribute('dataConvalidacion');
     firebase.database().ref('messages/').child(keyPostToDelete).remove();
-  }else{
+  } else {
     alert('No se borró el mensaje.')
-  }; 
+  };
 }
 
 //Función para adicionar estrellas.
-function starPost(){
+function starPost() {
 
 }
 

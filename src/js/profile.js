@@ -1,5 +1,5 @@
 //Seccion profile
-//imprime los datos de usuario en la pagina
+//Imprime los datos de usuario en la pagina
 firebase.auth().onAuthStateChanged(function (user) {
   if (user != null) {
     userData.innerHTML += `
@@ -9,65 +9,47 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
-
-//base de datos de usurios para mostrar en el perfil
+//Base de datos de usurios para mostrar en el perfil
 function users() {
   const currentUser = firebase.auth().currentUser;
   const inputEmail = inputConfigEmail.value;
   const inputTelefono = inputConfigPhone.value;
   const inputAlumno = inputConfigNameStudent.value;
   const inputCurso = inputConfigCourse.value;
-  
-  //esta funcion guarda los datos en la base de datos y tambien vacia los input al guardar
+
+  //Esta funcion guarda los datos en la base de datos y tambien vacia los input al guardar
   document.getElementById('inputConfigEmail').value = '';
   document.getElementById('inputConfigPhone').value = '';
   document.getElementById('inputConfigNameStudent').value = '';
   document.getElementById('inputConfigCourse').value = '';
 
-  
-  //nueva llave para la coleccion de datos
+
+  //Nueva llave para la coleccion de datos
   const newProfile = firebase.database().ref().child(`userProfile`).push().key;
-  //esto es lo que guarda en la base de datos
+  //Esto es lo que guarda en la base de datos
   firebase.database().ref(`userProfile/${newProfile}`).set({
     usuario: currentUser.displayName,
     email: inputEmail,
     telefono: inputTelefono,
-    alumno : inputAlumno,
-    curso : inputCurso
+    alumno: inputAlumno,
+    curso: inputCurso
   });
-  
+
   firebase.database().ref(`userProfile`)
-  .once("value", function(pullData){
-    let data = pullData.val();
-    for(let key in data) {
-      userData2.innerHTML = `
-      <p>${("Email: " +data[key].email)}</p>
-      <p>${("Teléfono: " +data[key].telefono)}</p>
-      <p>${("Alumno: " +data[key].alumno)}</p>
-      <p>${("Curso: " +data[key].curso)}</p>` 
-    }
-  });
-  
+    .once("value", function (pullData) {
+      let data = pullData.val();
+      for (let key in data) {
+        userData2.innerHTML = `
+      <p>${("Email: " + data[key].email)}</p>
+      <p>${("Teléfono: " + data[key].telefono)}</p>
+      <p>${("Alumno: " + data[key].alumno)}</p>
+      <p>${("Curso: " + data[key].curso)}</p>`
+      }
+    });
+
 }
 
-function saveUsers() {
-}
-
-
-/*
-firebase.database().ref(`userProfile`)
-.once('value')
-.then((userProfile) => {
-  console.log("ble > " +JSON.stringify(userProfile));
-
-})
-.catch(() => {
-
-})
-*/
-
-
-//mostrar las opciones para agregar nuevos datos
+//Mostrar las opciones para agregar nuevos datos
 editProfile = () => {
   configUser.style.display = "block";
   userData.innerHTML = `
