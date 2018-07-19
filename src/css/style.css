@@ -91,3 +91,7 @@
       left:-20vw;
   }
 }
+
+#configUser {
+  display: block;
+}

@@ -6,15 +6,14 @@ window.onload = () => {
       logIn.style.display = "none";
       sidebar.style.display = "block";
       profile.style.display = "block";
-      console.log(JSON.stringify(user));
-
+      
     } else {
       //Si no logeamos, nos mantenemos en la página de sign in o sign up
       logIn.style.display = "block";
       sidebar.style.display = "none";
       profile.style.display = "none";
     }
-    console.log("User: " + JSON.stringify(user));
+    
   });
 };
 
