@@ -2,7 +2,7 @@
 //Parte del test para ver si efectivamente se crea la cuenta con los dados correctos dados. Debe dar verdadero.
 Description('Debe crear una cuenta con mail y password dados', () => {
   it('Debe dar verdadero para email y clave dados', () => {
-    const email = 'test@test.com';
+    const email = 'test@email.com';
     const password = '123456';
     const result = window.controller.validateLogin(email, password);
     assert.equal(result.valid, true);
@@ -10,7 +10,7 @@ Description('Debe crear una cuenta con mail y password dados', () => {
   });
   //Parte del test que ve si se puede crear un user sin clave. Debe dar falso.
   it('Debe dar falso para la ausencia de clave', () => {
-    const email = 'test@test.com';
+    const email = 'test@email.com';
     const password = '';
     const result = window.controller.validateLogin(email, password);
     assert.equal(result.valid, false);
@@ -34,7 +34,7 @@ Description('Debe crear una cuenta con mail y password dados', () => {
   });
   //Parte del test que ve si se puede crear un user con una clave demasiado corta. Debe dar falso.
   it('Debe dar falso para una clave menor a 6 carácteres', () => {
-    const email = 'test@test.com';
+    const email = 'test@email.com';
     const password = '123';
     const result = window.controller.validateLogin(email, password);
     assert.equal(result.valid, false);
@@ -49,11 +49,4 @@ Description('Debe crear una cuenta con mail y password dados', () => {
     assert.equal(result.message, 'Debe ingresar un mail válido');
   });
   //Parte del test que ve si se puede crear un user con un formato de email y clave incorrectos. Debe dar falso.
-  it('Debe dar falso si ambos tienen un formato incorrecto', () => {
-    const email = 'test.com';
-    const password = '123';
-    const result = window.controller.validateLogin(email, password);
-    assert.equal(result.valid, false);
-    assert.equal(result.message, 'Debe ingresar datos válidos');
-  });
 })
