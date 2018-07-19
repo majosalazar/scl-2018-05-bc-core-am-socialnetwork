@@ -110,12 +110,18 @@
       </a>
     </div>
     <!--Sección perfil de usuario-->
-    <div class="container-fluid" id="secProfile">
-      <div class="text-center p-5"></div>
-      <div id="userData"></div>
-      <button id="configProfile" onclick="users()">Configuración </button>
+    <div id="userData"></div>
+    <div id="userData2"></div>
+    <button id="configProfile" onclick="editProfile">Configuración </button>
+    <div id="configUser" >
+      <input type="text" placeholder="Email" id="inputConfigEmail">
+      <input type="text" placeholder="Numero teléfonico" id="inputConfigPhone">
+      <input type="text" placeholder="Nombre Alumno" id="inputConfigNameStudent">
+      <input type="text" placeholder="Curso" id="inputConfigCourse">
+      <button id="saveInfo" onclick="users()">Guardar</button>
     </div>
   </div>
+  
   <!--Div del muro-->
   <div id="wallDisplay">
     <div class="container">
