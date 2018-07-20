@@ -17,7 +17,7 @@
   <!--Div del login-->
   <div id="logIn">
     <div class="text-center p-3">
-      <img src="img/logo-RS-blanco.png" class="rounded img-fluid" alt="Profile">
+      <img src="img/logo-RS-final.png" class="rounded img-fluid" alt="Profile">
     </div>
     <div class="container">
       <p class="text-justify text-light m-0">Chao Bullying es una aplicación mobile y web dirigida a la comunidad escolar con el fin de promover la comunicación
@@ -47,16 +47,14 @@
     </div>
     <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
     <div id="facebookBtn">
-      <button type="button" onclick="loginFacebook()" id="loginFacebook"><i class="fab fa-facebook-square"></i> Ingresa con Facebook</button>
+      <button onclick="loginFacebook()" class="btn btn-light" id="loginFacebook"><i class="fab fa-facebook-square"></i> Ingresa con Facebook</button>
     </div>
     <div id="googleBtn">
-      <button onclick="loginGoogle()" id="loginGoogle"><i class="fab fa-google"></i> Ingresa con tu cuenta de Google</button>
-    </div>
-    <div class="container-fluid">
-      <a href="#">
+      <button onclick="loginGoogle()" class="btn btn-light" id="loginGoogle"><i class="fab fa-google"></i> Ingresa con tu cuenta de Google</button>
+      <a href="#" id="linkPass">
         ¿Olvidaste tu contraseña?
       </a>
-    </div>
+    </div> 
   </div>
   <!--Div del sidebar-->
   <div id="sidebar">
@@ -113,12 +111,20 @@
     <!--Sección perfil de usuario-->
     <div id="userData"></div>
     <div id="userData2"></div>
-    <button id="configProfile" onclick="editProfile">Configuración </button>
+    <button id="configProfile" onclick="editProfile()">Configuración </button>
     <div id="configUser" >
-      <input type="text" placeholder="Email" id="inputConfigEmail">
-      <input type="text" placeholder="Numero teléfonico" id="inputConfigPhone">
-      <input type="text" placeholder="Nombre Alumno" id="inputConfigNameStudent">
-      <input type="text" placeholder="Curso" id="inputConfigCourse">
+      <div>
+        <input type="text" class="inputsProfile" placeholder="Email" id="inputConfigEmail">
+      </div>
+      <div>
+        <input type="text" class="inputsProfile" placeholder="Numero teléfonico" id="inputConfigPhone">
+      </div>
+      <div>
+        <input type="text" class="inputsProfile" placeholder="Nombre Alumno" id="inputConfigNameStudent">
+      </div>
+      <div>
+        <input type="text" class="inputsProfile" placeholder="Curso" id="inputConfigCourse">
+      </div>
       <button id="saveInfo" onclick="users()">Guardar</button>
     </div>
   </div>

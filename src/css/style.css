@@ -32,16 +32,30 @@ body {
 
 #loginFacebook {
   width: 100%;
-  height: 2em;
-  background-color: white;
-  
+  height: 2em; 
 }
 
 #loginGoogle {
   width: 100%;
   height: 2em;
-  background-color: white;
+}
 
+#linkPass {
+  color: white;
+}
+
+.inputsProfile {
+  text-align: center;
+  padding: 5px;
+  margin: 2px;
+}
+
+#userData {
+  font-size: 25px;
+}
+
+#userData2 {
+  font-size: 17px;
 }
 
 /*sidebar*/
@@ -90,7 +104,7 @@ body {
 }
 
 #configUser {
-  display: block;
+  display: none;
 }
 
 /*Menú lateral con el Navbar*/
