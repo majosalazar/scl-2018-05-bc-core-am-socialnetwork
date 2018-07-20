@@ -99,10 +99,15 @@
       <div>
         <input type="text" class="inputsProfile" placeholder="Curso" id="inputConfigCourse">
       </div>
+    <button id="configProfile" onclick="editProfile">Configuración </button>
+    <div id="configUser">
+      <input type="text" placeholder="Email" id="inputConfigEmail">
+      <input type="text" placeholder="Numero teléfonico" id="inputConfigPhone">
+      <input type="text" placeholder="Nombre Alumno" id="inputConfigNameStudent">
+      <input type="text" placeholder="Curso" id="inputConfigCourse">
       <button id="saveInfo" onclick="users()">Guardar</button>
     </div>
   </div>
-  
   <!--Div del muro-->
   <div id="wallDisplay">
     <div class="container">
@@ -122,6 +127,16 @@
       <div class="container-fluid">
         <div class="row">
           <button onclick="writeNewPost()" class="btns m-2">Iniciar un tema</button>
+        </div>
+      </div>
+      <div class="container" id="editContainer">
+        <div class="container">
+          <textarea id="editMessageBox" style="width: 310px; margin: 0px; height: 80px; border: 2px solid #00A5E1" class="align-self-center"
+            placeholder="Escriba el mensaje."></textarea>
+        </div>
+        <div class="container">
+          <input id="editSendButton" type="button" class="mb-1" value="Editar" onclick="editSendMessage(event)">
+          <input id="editCancelButton" type="button" class="mb-1" value="Cancelar" onclick="editCancelMessage()">
         </div>
       </div>
     </div>
