@@ -45,16 +45,19 @@
         </div>
       </div>
     </div>
-    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+    <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false"
+      data-use-continue-as="false"></div>
     <div id="facebookBtn">
-      <button onclick="loginFacebook()" class="btn btn-light" id="loginFacebook"><i class="fab fa-facebook-square"></i> Ingresa con Facebook</button>
+      <button onclick="loginFacebook()" class="btn btn-light" id="loginFacebook">
+        <i class="fab fa-facebook-square"></i> Ingresa con Facebook</button>
     </div>
     <div id="googleBtn">
-      <button onclick="loginGoogle()" class="btn btn-light" id="loginGoogle"><i class="fab fa-google"></i> Ingresa con tu cuenta de Google</button>
+      <button onclick="loginGoogle()" class="btn btn-light" id="loginGoogle">
+        <i class="fab fa-google"></i> Ingresa con tu cuenta de Google</button>
       <a href="#" id="linkPass">
         ¿Olvidaste tu contraseña?
       </a>
-    </div> 
+    </div>
   </div>
   <!--Div del sidebar-->
   <div id="sidebar">
@@ -86,7 +89,7 @@
     <div id="userData"></div>
     <div id="userData2"></div>
     <button id="configProfile" onclick="editProfile()">Configuración </button>
-    <div id="configUser" >
+    <div id="configUser">
       <div>
         <input type="text" class="inputsProfile" placeholder="Email" id="inputConfigEmail">
       </div>
@@ -99,12 +102,7 @@
       <div>
         <input type="text" class="inputsProfile" placeholder="Curso" id="inputConfigCourse">
       </div>
-    <button id="configProfile" onclick="editProfile">Configuración </button>
-    <div id="configUser">
-      <input type="text" placeholder="Email" id="inputConfigEmail">
-      <input type="text" placeholder="Numero teléfonico" id="inputConfigPhone">
-      <input type="text" placeholder="Nombre Alumno" id="inputConfigNameStudent">
-      <input type="text" placeholder="Curso" id="inputConfigCourse">
+      <button id="configProfile" onclick="editProfile">Configuración </button>
       <button id="saveInfo" onclick="users()">Guardar</button>
     </div>
   </div>

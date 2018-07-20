@@ -13,8 +13,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 editProfile = () => {
   configUser.style.display = "block";
   console.log('hola');
-  
-  
+
+
 }
 
 //Base de datos de usurios para mostrar en el perfil
